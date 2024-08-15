@@ -1,4 +1,5 @@
-import { mockTodos } from "@/prisma/seed/todos";
+import { mockTodos } from "../../prisma/seed/todos";
+
 import { PrismaClient } from "@prisma/client";
 
 const db = new PrismaClient();
@@ -12,7 +13,8 @@ export async function reseed() {
   await db.todo.deleteMany({});
 
   //seed db
-  await mockTodos(db);
+  const todos = await mockTodos(db);
+  console.log("Todos seeded:", todos);
 
   return null;
 }
