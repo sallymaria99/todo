@@ -4,7 +4,7 @@ describe("Testning av test!!!", () => {
   });
 
   it("should load the todos", () => {
-    cy.visit("/todos");
+    cy.visit("/");
     cy.contains("hej").should("be.visible");
   });
 });
