@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "seed": "ts-node ./prisma/seed/todos.ts",
     "start": "next start",
     "lint": "next lint",
     "studio": "prisma studio",
@@ -12,8 +13,8 @@
     "db-seed": "prisma db seed",
     "db-reset": "tsx prisma/reset.ts",
     "test": "cross-env NODE_ENV=test DATABASE_URL=file:./test.db jest",
-    "cypress:open": "cross-env NODE_ENV=test DATABASE_URL=file:./test.db cypress open --e2e -b chrome",
-    "cypress:run": "cross-env NODE_ENV=test DATABASE_URL=file:./test.db cypress run --e2e",
+    "cypress:open": "cross-env NODE_ENV=test cypress open",
+    "cypress:run": "cross-env NODE_ENV=test cypress run",
     "cy:dev": "next dev --port 3100",
     "test:e2e": "cross-env NODE_ENV=test start-server-and-test cy:dev http://localhost:3100 cy:open"
   },
@@ -21,11 +22,11 @@
     "@prisma/client": "^5.18.0",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18",
-    "ts-node": "^10.9.2"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@cypress/webpack-preprocessor": "^6.0.2",
+    "@types/node": "^20.14.15",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "cross-env": "^7.0.3",
@@ -37,7 +38,9 @@
     "prisma": "^5.18.0",
     "start-server-and-test": "^2.0.5",
     "tailwindcss": "^3.4.1",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
     "tsx": "^4.16.5",
-    "typescript": "^5"
+    "typescript": "^5.5.4"
   }
 }
