@@ -1,6 +1,6 @@
 # TODO-applikation som testas E2E med Cypress
 
-Detta är en Todo-applikation i sin enklaste form, där fokuset mer
+Detta är en Todo-applikation i sin enklaste form, där fokuset mer ligger på att testa applikationens funktionalitet.
 
 ## Installation
 
